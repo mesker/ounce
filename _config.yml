@@ -1,6 +1,6 @@
 name: The Ounce › Style Guide
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 permalink: none
 baseurl: /ounce
 url: http://localhost:4000
