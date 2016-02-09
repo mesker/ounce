@@ -1,0 +1,61 @@
+/* =============================================================================
+   Form Inline styles
+   ========================================================================== */
+
+form {
+  display: block;
+  @include slug(1, 1);
+  padding: $slug / 2;
+  background-color: $ounce-gray;
+  border-radius: $rounded;
+}
+	form ul {
+	  padding: 0;
+	  list-style: none;
+	}
+
+label, legend {
+  @include adjust-font-size-to($small-body-text, 3);
+  @include groom(2, $small-body-text, 600);    	
+}
+	legend {
+		margin-left: 0;	// important	
+	}
+  ul label { 
+  	@include adjust-font-size-to($small-body-text, 3);
+  	@include groom(2, $small-body-text, 400); 
+    text-transform: none;
+    text-shadow: none;
+  }
+	input[type="radio"] {
+	  margin-right: $slug / 4;
+	}
+
+.input-text,
+textarea,
+select {
+  border: 1px solid $ounce-gray-darken;
+  padding: 9px 12px;
+  border-radius: $rounded;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+  fieldset li {
+  	margin-left: 0;
+  }
+
+.input-text {
+	width: 90%;
+}
+
+select {
+	width: auto;
+}
+
+textarea {
+	width: 90%;
+  height: 6em;
+}

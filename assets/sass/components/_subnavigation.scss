@@ -1,0 +1,38 @@
+/* =============================================================================
+   Sidebar Navigation styles
+   ========================================================================== */
+
+.subnavigation {
+  ul {
+    list-style: none;
+    margin: 0; 
+  }
+  li {
+    margin: 0;
+  }
+  ul li li {
+    margin-left: $slug /2;  
+  }
+  a {
+    @include adjust-font-size-to(16px);
+    display: block; 
+    padding: 1em 0;
+    border-top: 1px solid $ounce-gray;    
+  }
+  .level-1 {
+    font-weight: 600;
+  }
+}
+.subnavigation__icon {
+  top: 0.125em;
+  float: right;
+}
+
+// for landing page subnavigation lists
+.margin-fix {
+  @include slug(.75, 0);
+}
+
+#you-are-here {
+	color: $ounce-orange;
+}

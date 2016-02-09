@@ -1,0 +1,42 @@
+/* =============================================================================
+   Section Callout
+   ========================================================================== */
+
+.l-callout {
+	@include slug (1, 1);
+	@include breakpoint($md-lg) {
+		@include slug(1.5, 1.5);
+	}	
+}
+.l-callout__image {
+	text-align: center;
+	margin-bottom: $zen-gutter-width / 2;
+	@include breakpoint($md-lg) {
+		@include zen-grid-item(4, 1);	
+	}	
+}
+.l-callout__content-block {
+	@include zen-grid-item(12, 1);	
+	@include breakpoint($md-lg) {
+		@include zen-grid-item(8, 5);
+	}	
+}
+.callout__circle-image {
+	width: 40%;
+	border-radius: 1000px;
+	border: 12px solid $ounce-gray;
+	box-sizing: border-box;
+	@include breakpoint($md-lg) {
+		width: 100%;
+	}
+}
+.two-col {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+	@include breakpoint($md-lg) {	
+		-webkit-column-count: 2;
+		-webkit-column-gap: 60px;
+		-moz-column-count: 2;
+		-moz-column-gap: 60px;
+	}
+}

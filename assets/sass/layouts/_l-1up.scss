@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Layout rules for full-width content
+ */
+
+// 1up Layout
+.l-1up {
+	@include zen-clear();
+	@include slug(0, .5);
+	@include zen-grid-item(12, 1);	
+}

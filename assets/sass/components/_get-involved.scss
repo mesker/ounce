@@ -1,0 +1,24 @@
+/* =============================================================================
+   Get Involved object
+   ========================================================================== */
+
+.l-get-involved {
+	@include slug(1, 1);	
+	@include breakpoint($md-lg) {
+		//@include slug(1.25, 1.25);
+	}
+}
+.l-get-involved__intro {
+	@include zen-grid-item(12, 1);
+	@include breakpoint($md-lg) {
+		@include zen-grid-item(8, 1);
+	}
+}
+.l-get-involved__nav {
+	@include zen-clear();
+	@include zen-grid-item(12, 1);
+	@include breakpoint($md-lg) {
+		@include zen-clear(none);	
+		@include zen-grid-item(4, 9);
+	}
+}

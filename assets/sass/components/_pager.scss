@@ -1,0 +1,32 @@
+/* =============================================================================
+   Pagination
+   ========================================================================== */
+
+.pager {
+  @include clearfix;  
+  list-style: none;
+  display: inline-block;
+}
+.pager li {
+  float: left;
+  margin-left: 0;
+  margin-right: $slug/4;  
+}
+.pager li a {
+  padding: 0.5em 0.75em;
+  border: 1px solid $ounce-gray;
+  border-radius: $rounded;
+}
+.pager li a.pager-toggle {
+  padding: 0;
+  border: none;
+  border-radius: none;  
+}
+.ss-icon.pager {
+  margin: 0 $slug / 8;
+}
+
+// Style the pager container at the bottom of the list
+.listing-pager {
+  text-align: center;
+}

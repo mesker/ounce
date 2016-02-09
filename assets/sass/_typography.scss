@@ -1,0 +1,171 @@
+/* ==============================================================
+   Typography
+   ============================================================== */
+
+body {
+  font-family: 'Whitney SSm A', 'Whitney SSm B', $helvetica;
+  color: $dark-gray; 
+}
+
+// Use to spec Whitney 'display'
+@mixin display-type { 
+  font-family: 'Whitney A', 'Whitney B', $helvetica;
+}
+
+
+/* ==============================================================
+   Modular Scale (Major Third: 18px @ 1:1.25)
+   ============================================================== */
+
+$display-text:     55px; // h1 alternate-a
+$large-heading:    44px; // h1
+$medium-heading:   35px; // h1 alternate-b
+$small-heading:    28px; // h2
+$large-body-text:  22px; // h3
+$body-text:        18px; // h4, p
+$small-body-text:  14px; // h5, h6
+$label-text:       12px; // small
+
+$navigation-text:  16px; // off-scale (true sadness)
+
+
+/* ==============================================================
+   Global Type Usages
+   ============================================================== */
+
+h1 {
+  @include adjust-font-size-to($large-heading, 9);
+  @include groom(4, $large-heading, 400, $ounce-purple);
+  @include display-type;
+}
+
+h2 {
+  @include adjust-font-size-to($small-heading, 6);
+  @include groom(2, $small-heading, 600, $ounce-purple);
+}
+
+h3 {
+  @include adjust-font-size-to($large-body-text, 5);
+  @include groom(2, $large-body-text, 600, $ounce-purple);   
+}
+
+h4 {
+  @include adjust-font-size-to($body-text, 4);
+  @include groom(2, $body-text, 600, $ounce-purple); 
+}
+
+h5 {
+  @include adjust-font-size-to($small-body-text, 3.5);
+  @include groom(2, $body-text, 600, $ounce-purple);
+  text-transform: uppercase;    
+}
+
+h6 {
+  @include adjust-font-size-to($small-body-text, 3.5);
+  @include groom(2, $body-text, 400, $ounce-purple);
+  text-transform: uppercase;   
+}
+
+p, ul, ol {
+  @include adjust-font-size-to($body-text, 5);
+  @include groom(4, $body-text);   
+}
+
+li {
+  @include groom(2, $body-text);
+  //margin-left: $slug/2;     
+  // for nested lists
+  ul li {
+    margin-top: rhythm(1, $body-text) ;
+    margin-bottom: rhythm(1, $body-text) ;
+  } 
+}
+
+figcaption {
+  @include adjust-font-size-to($small-body-text, 4);
+  @include groom(4, $small-body-text, 400, $medium-gray); 
+}
+
+strong { 
+  font-weight: 700; 
+}
+
+
+/* Specific Type Styles
+   ============================================================== */
+
+.display-text {
+  @include adjust-font-size-to($display-text, 10);
+  @include groom(4, $display-text, 300, $ounce-purple);
+  @include display-type;  
+}
+
+.deck {
+  @include adjust-font-size-to($small-heading, 6.5);
+  @include groom(4, $small-heading, 400);
+  @include display-type;  
+}
+
+.large-body-text {
+  @include adjust-font-size-to($large-body-text, 5);
+  @include groom(4, $large-body-text, 400, $dark-gray);   
+}
+
+.section-title {
+  @include adjust-font-size-to($body-text, 5);
+  @include groom(2, $body-text, 800, $ounce-orange);
+  text-transform: uppercase; 
+}
+
+.list-item-title {
+  @include adjust-font-size-to($body-text, 4);
+  @include groom(1, $body-text, 600, $ounce-purple); 
+}
+
+.date, .tags, .source, .position, .pager {
+  @include adjust-font-size-to($small-body-text, 4);
+  @include groom(0, $small-body-text, 400);
+}
+
+.date, .tags, .source {
+  display: inline-block;
+  margin-right: $slug / 2;
+}
+
+.blog-banner-title {
+  @include adjust-font-size-to($display-text, 10);
+  @include groom(0, $display-text, 400, #fff);
+  @include display-type;
+  @include text-shadow(rgba(black, 0.3) 0px 1px 6px); 
+}
+
+.blog-post-category {
+  @include adjust-font-size-to($body-text, 5);
+  @include groom(2, $body-text, 800, $ounce-purple);
+  text-transform: uppercase;
+  border-bottom: 1px solid $ounce-purple-lightest;
+  display: inline-block;
+  padding-bottom: $slug/4;
+}
+
+.blog-author {
+  @include adjust-font-size-to($body-text, 5);
+  @include groom(1, $body-text, 600, $dark-gray);
+}
+
+
+/* Links
+   ============================================================== */
+
+a:link,
+a:visited {
+  color: $ounce-purple;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  @include trans($timing, $easing);
+  color: $ounce-orange;
+}
+

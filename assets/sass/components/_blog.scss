@@ -1,0 +1,43 @@
+/* ==============================================================
+   Unique Blog styles
+   ============================================================== */
+
+.l-blog-author-photo {
+	float: left;
+	width: 40px;
+	margin-right: $slug/3;
+	@include breakpoint($md-lg) {
+		width: 60px;
+	}	
+}
+.l-blog-metadata {
+	float: left;
+	@include slug(0,.5);
+	@include breakpoint($md-lg) {
+		@include slug(.075,.5);
+	}
+}
+.blog-post {
+	@include slug(0,1);
+	padding-bottom: $slug/2;
+	border-bottom: 1px solid $ounce-gray;
+}
+.blog-author-photo {
+	border-radius: 100px;
+}
+
+.blog-post-header {
+	@include clearfix;
+}
+
+.l-blog-banner {
+	@include zen-grid-item (12, 1);
+	@include slug(1,1);	
+}
+.blog-banner {
+	background: url(../imgs/global/wall-to-wall-5.jpg);	
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: relative;
+}

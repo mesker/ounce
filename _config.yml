@@ -1,0 +1,6 @@
+name: Styleguide Starter Kit
+markdown: redcarpet
+pygments: true
+permalink: none
+baseurl: /styleguide
+url: http://localhost:4000

@@ -1,0 +1,51 @@
+/* ==============================================================
+   Wall to Wall objects
+   ============================================================== */
+
+.l-wall-to-wall__content-block-left,
+.l-wall-to-wall__content-block-right {
+	padding: $zen-gutter-width / 2;
+	background-color: rgba(#fff, .9);
+	@include breakpoint($md-lg) {
+		background-color: #fff;
+	}
+}
+.l-wall-to-wall__content-block-right {
+	@include breakpoint($md-lg) {
+		position: static;
+		@include zen-grid-item(5, 8);
+		@include slug(1.25, 1.25);	
+	}
+}
+.l-wall-to-wall__content-block-left {
+	@include breakpoint($md-lg) {
+		position: static;
+		@include zen-grid-item (5, 1);
+		@include slug(1.25, 1.25);	
+	}
+}
+// Declare unique background image:
+.intro { background: url(../imgs/global/wall-to-wall-1.jpg); }
+.how-we-help { background: url(../imgs/global/wall-to-wall-2.jpg); }
+.get-involved-landing { background: url(../imgs/global/wall-to-wall-3.jpg); }
+.get-involved-landing-2 { background: url(../imgs/global/wall-to-wall-4.jpg); }
+
+// Common background image styles:
+.wall-to-wall {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: relative;
+	min-height: 300px;	   
+	@include breakpoint($md-lg) {
+		position: static;
+		background-position: center top;	
+		min-height: 400px;
+	}
+}
+// Mobile wall-to-wall image 
+.wall-to-wall__mobile-image {
+	@include breakpoint($md-lg) {	
+		display: none;
+	}
+}

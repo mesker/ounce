@@ -1,0 +1,174 @@
+/**
+ * @file
+ * Define your custom Sass mixins and extends here.
+ * @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+ */
+
+/* ==========================================================================
+   Typography grooming extends
+   ========================================================================== */
+
+/* Tight tracking */
+%track-in { letter-spacing: -0.0125em; }
+
+/* Open tracking */
+%track-out { letter-spacing: 0.1em; }
+
+/* Style larger text with a tighter tracking, change weight, etc.  */
+%display-type { @extend %track-in; font-weight: 700; }
+
+/* Style all caps with a slightly open tracking. */
+%allcaps { @extend %track-out; text-transform: uppercase; }
+
+
+/* ==========================================================================
+   Clearfix extend
+   ========================================================================== */
+
+/**
+ * Applies a clearfix ruleset using a placeholder selector. Placeholder selectors
+ * do not get compiled uless they are called - removing the nesting issues that
+ * can otherwise occur with extends.
+ */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+/* ==============================================================
+   Visually hidden extend
+   ============================================================== */
+
+/**
+ * Element-invisible as defined by snook.ca
+ * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.element-invisible,
+%element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Turns off the element-invisible effect. */
+%element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+.element-focusable,
+%element-focusable {
+  @extend %element-invisible;
+
+  &:active,
+  &:focus {
+    @extend %element-invisible-off;
+  }
+}
+
+/* ==============================================================
+   Transition mixin
+   ============================================================== */
+
+@mixin trans($timing, $easing) {
+  -webkit-transition: all $timing $easing;
+  -moz-transition: all $timing $easing;
+  -o-transition: all $timing $easing;
+  transition: all $timing $easing;
+}
+
+/* ==============================================================
+   Functions
+   ============================================================== */
+
+/* Convert pixels values to em values */
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+
+/* ==============================================================
+   Typography mixins
+   ============================================================== */
+
+/* Spec vertical rhythm, weight & color in one line
+/* Usage: @include groom(4, 34px, 400, $neutral-text); */
+@mixin groom ($base-line-unit-after, $font-size, $font-weight: auto, $color: auto) {
+  margin: 0 auto rhythm($base-line-unit-after, $font-size);
+  font-weight: $font-weight;
+  color: $color;   
+}
+
+
+/* ==============================================================
+   Positioning mixins
+   ============================================================== */
+
+/*
+// For consistent vertical spacing above and below objects
+// Convert the $base-line-height to em
+$base-line-height-em: calc-em($base-line-height, 16px);
+// Set the value of 1 slug unit
+$slug: $base-line-height-em * 8; 
+*/
+
+// For consistent vertical spacing above and below objects
+// Set the value of 1 slug unit
+$slug: $base-line-height * 8; 
+
+// Usage: @include slug(0, 1);
+@mixin slug ($top-slug-count: 0, $bottom-slug-count: 0) {
+	margin-top: ($slug * $top-slug-count);
+	margin-bottom: ($slug * $bottom-slug-count);
+}
+
+// Center items that do not belong to the grid
+@mixin centered {
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+// Place on parent div to vertically center children
+@mixin flexbox-vertical-center {
+	width: 100%; // Firefox needs this  
+  height: 100%; // Height can be anything
+      
+  // WebKit (Chrome & Safari)
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  
+  // Firefox
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  
+  // IE 
+  display: -ms-box;
+  -ms-box-pack: center;
+  -ms-box-align: center;
+  
+  // Native CSS
+  display: box;
+  box-pack: center;
+  box-align: center;
+}
+
+@mixin footer-navigation {
+  @include adjust-font-size-to($navigation-text, 4);
+  @include groom(4, $navigation-text, 400);  
+}

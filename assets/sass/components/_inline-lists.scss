@@ -1,0 +1,52 @@
+/* =============================================================================
+   Inline List styles
+   ========================================================================== */
+
+// Illustrated Lists
+.illo-list {
+  @include clearfix;
+  list-style: none;
+}
+.illo-list li {
+  clear: both;  
+  margin-left: 0;
+  padding-top: $slug/4;
+}
+.illo-list-image {
+  float: left;  
+  width: 20%;
+  margin-right: 4%;
+  margin-bottom: $slug / 2;  
+  position: relative;
+  top: .25em;
+}
+.illo-list-text {
+  float: left;
+  width: 76%;
+}
+// For use with .illo-list in Staff listings
+.illo-list .staff-list {
+  width: auto;  
+  @include breakpoint($md-lg) {
+    clear: none;
+    float: left;
+    width: 46%;
+    margin-right: 4%;      
+  }
+}
+
+// Un-bulleted Lists, Lists w/ Hierarchy
+.unbulleted-list {
+  @include clearfix;  
+  list-style: none;
+}
+.unbulleted-list li {
+  clear: both;
+  margin-left: 0;
+  padding: 0;
+} 
+// Add rules (and proper spacing) between <li> items 
+.rule-above li {
+  padding: $slug/4 0 0;
+  border-top: 1px solid $ounce-gray;
+}

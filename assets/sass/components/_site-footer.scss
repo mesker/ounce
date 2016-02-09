@@ -1,0 +1,64 @@
+/* ==============================================================
+   Footer
+   ============================================================== */
+
+.footer {
+	border-top: 6px solid $ounce-gray-tint;
+	background-color: $ounce-gray;
+}
+
+.footer-logo {
+	width: 96px;
+	@include breakpoint($md) {
+		width: 144px;
+		@include slug (1,0);
+	}	
+}
+
+.social-nav {
+	@include breakpoint($md) {
+		@include slug (1,0);	
+		text-align: right;
+	}	
+}
+
+.footer-nav {
+	@include footer-navigation;
+	@include slug(1,0);		 
+  ul {
+    list-style: none;
+  }
+  li {
+    margin: 0;
+  }
+  .level-1 {
+    font-weight: 600;
+  }
+  .level-1.ounce-network-title {
+    color: $ounce-orange;
+  }
+}
+.global-nav {
+	display: none;
+	@include breakpoint($md-lg) {
+		display: block;
+	}	
+}
+
+a > .network-icon {
+	@include adjust-font-size-to($label-text);
+	margin-right: $slug/6;
+}
+
+.footer-copyright {
+  @include adjust-font-size-to($label-text, 4);
+  @include groom(4, $small-body-text);  
+	padding-top: $slug / 4;
+	border-top: 1px solid rgba($ounce-purple, .1);
+	display: block;	
+	@include breakpoint($md) {
+		padding-top: $slug / 2;
+	}
+}
+
+

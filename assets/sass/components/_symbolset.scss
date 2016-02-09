@@ -1,0 +1,46 @@
+/* =============================================================================
+   Symbolset Usage
+   ========================================================================== */
+
+.ss-icon {
+  font-size: 8px;
+  position: relative;
+  vertical-align: middle;
+}
+.ss-icon.left {
+  margin-left: $slug / 8;
+}
+.ss-icon.right {
+  margin-right: $slug / 8;
+}
+.ss-icon.both {
+  margin: 0 $slug / 8;
+}
+.ss-icon.large {
+  font-size: 14px;
+}
+.ss-icon.larger {
+  font-size: 18px;
+}
+
+.metadata-icon {
+  font-size: 14px;
+  color: $ounce-purple-lighten;
+  margin-left: 0;
+  margin-right: $slug / 4;  
+}
+
+a > .ss-icon {
+  color: $ounce-orange;
+}
+
+a > .ss-social-circle {
+  @include adjust-font-size-to($small-heading, 6.5);
+  color: $ounce-purple;
+  position: relative;
+  margin-left: 0; // important
+  margin-right: $slug / 8;
+}
+a > .ss-social-circle:hover {
+  color: $ounce-orange;
+}

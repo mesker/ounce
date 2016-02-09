@@ -1,0 +1,18 @@
+/* =============================================================================
+   Bio Page styles
+   ========================================================================== */
+
+.inline-bio-image {
+  display: inline;
+  width: 25%;
+  float: left;
+  margin: $slug / 5 $slug / 2 $slug / 3 0;
+  border-radius: $rounded;
+}
+
+// Inline 2up Bio rollups
+.l-inline-2up {
+	float: left;
+	width: 45%;
+	margin-right: 5%;
+}

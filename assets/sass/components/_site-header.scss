@@ -1,0 +1,203 @@
+/**
+ * @file
+ * Style rules for the site header.
+ */
+
+/* ==============================================================
+   Layout Header Nav
+   ============================================================== */
+
+.site-header { 
+	border-top: 6px solid $ounce-purple;
+	background-color: $white;
+}
+
+.l-header-logo,
+.l-header-primary-nav,
+.l-header-donate {
+	padding: 0 $zen-gutter-width / 2;
+}
+
+.l-header-logo {
+	@include slug(.6, 0);
+	float: left;
+	width: 100px;
+	@include breakpoint($lg-xl) {
+		@include slug(1.075, 0);	
+		width: auto;
+	}
+}
+.l-header-primary-nav {
+	float: right;
+	@include slug(.75, 0);
+	@include breakpoint($lg-xl) {
+		@include slug(1.1, .25);		
+	}
+}
+.header-primary-nav__item {
+	display: none;
+	@include breakpoint($lg-xl) {
+		display: inline-block;
+  	@include adjust-font-size-to($large-body-text, 5);
+  	@include groom(4, $large-body-text, 400, $dark-gray);
+		font-weight: 300;
+		padding-left: $zen-gutter-width / 2;
+		text-transform: uppercase;
+	}
+}
+
+.l-header-donate {
+	display: none;
+	@include breakpoint($lg-xl) {	
+		display: inline-block;
+		float: right;
+	}
+}
+
+.mobile-nav-icon {
+  @include adjust-font-size-to($body-text);
+  padding: rhythm(3.5, $body-text) rhythm(3, $body-text) rhythm(3, $body-text);	
+  text-align: right;
+	display: inline-block;
+	@include breakpoint($lg-xl) {	
+		display: block;
+	}
+}
+
+.search-nav {
+	display: inline-block;
+	background-color: $ounce-gray;
+	width: 44px;
+	height: 44px;
+	border-radius: 22px;
+	text-align: center;
+	position: relative;
+	top: -20px;
+	@include breakpoint($lg-xl) {		
+		margin-left: $zen-gutter-width / 2;
+	}		
+}
+.search-nav:hover {
+	@include trans($timing, $easing);
+	background-color: $ounce-orange;
+	.search-icon {
+		color: #fff;
+	}
+}
+
+.mobile-nav {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	margin-left: $zen-gutter-width / 4;
+	color: $ounce-purple;
+	@include breakpoint($lg-xl) {	
+		display: none;
+	}
+
+}
+.mobile-nav:hover {
+	@include trans($timing, $easing);
+	color: $ounce-orange;
+}
+
+
+// Secondary Nav
+.l-header-secondary-nav {
+	display: none;
+	@include breakpoint($lg-xl) {	
+		display: block;
+		float: left;
+		padding-left: $zen-gutter-width / 2;
+	}	
+}
+.secondary-nav-stripe {
+	background-color: $ounce-gray;
+	height: 6px;
+	@include breakpoint($lg-xl) {		
+  	@include adjust-font-size-to($navigation-text, 1);
+  	@include groom(0, $navigation-text, 600, $medium-gray);
+  	height: auto;			
+  }
+}
+
+.parent,
+.parent ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.parent li {
+	display: inline-block;
+	position: relative;
+	padding: $zen-gutter-width / 4 $slug / 2;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+.parent li:hover {
+  background-color: #fff;
+}
+.parent ul {
+	display: none;
+ 	position: absolute;
+	top: 56px;
+  left: 0;
+  z-index: 99999;
+  background-color: #fff;
+}
+.parent li:hover > ul {
+	display: block;
+}
+
+.child {
+	opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  box-shadow: 1px 6px 5px rgba($ounce-gray-darken, .2);
+}
+.child li {
+	border-top: 1px dotted $ounce-gray;
+	padding: $slug / 3 $slug / 2;
+  margin: 0;
+}
+.child li:hover {
+	@include trans($timing, $easing);
+  background-color: $ounce-gray;	
+}
+.child li:first-child {
+	//padding-top: $slug / 3;
+}
+.child li:last-child {
+	//padding-bottom: $slug / 3;
+}
+.child a {
+	font-weight: 400;
+	width: 15em;
+	display: block;
+}
+
+
+/* ==============================================================
+   Nav icon styles
+   ============================================================== */
+
+.ss-icon {
+	vertical-align: middle;
+}
+
+a > .ss-icon.dropdown-icon {
+	font-size: $crumb;
+	color: $ounce-purple-lighten;
+	margin-left: $slug/4;
+}
+a > .ss-icon.search-icon {
+	font-size: $large-body-text;
+	margin-left: 0;
+	color: $ounce-purple;
+	text-align: center;
+	top: 20px;
+}
+
+
+

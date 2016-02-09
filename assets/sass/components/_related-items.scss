@@ -1,0 +1,25 @@
+/* =============================================================================
+   Related Items block
+   ========================================================================== */
+
+.l-sidebar-block {
+	@include slug(1,0);
+	background-color: $ounce-gray;
+	border-radius: $rounded;
+	padding: $zen-gutter-width / 3;
+}
+
+.featured-list-item {
+	@include clearfix;
+	@include slug(.5, 0);
+}
+
+.featured-list-item-image {
+	@include slug(0,.25);
+}
+
+.related-list-item {
+	@include clearfix;	
+	padding-top: $slug / 3;
+  border-top: 1px solid $ounce-gray-tint;
+}

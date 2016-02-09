@@ -1,0 +1,15 @@
+/* =============================================================================
+   Article styles
+   ========================================================================== */
+
+.article-metadata {
+	padding-bottom: $slug/2;
+}
+
+.article-image {
+  margin: rhythm(2, $small-body-text) auto rhythm(2, $small-body-text);
+}
+
+.share-this {
+	@include slug(1, .5);
+}
