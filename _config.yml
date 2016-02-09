@@ -1,6 +1,6 @@
-name: Styleguide Starter Kit
+name: The Ounce › Style Guide
 markdown: redcarpet
 pygments: true
 permalink: none
-baseurl: /styleguide
+baseurl: /ounce
 url: http://localhost:4000

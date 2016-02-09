@@ -6,6 +6,7 @@
 .illo-list {
   @include clearfix;
   list-style: none;
+  padding-left: 0;
 }
 .illo-list li {
   clear: both;  
@@ -39,6 +40,7 @@
 .unbulleted-list {
   @include clearfix;  
   list-style: none;
+  padding-left: 0;
 }
 .unbulleted-list li {
   clear: both;

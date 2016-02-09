@@ -121,6 +121,7 @@ html {
   font-size: 100% * ($base-font-size / 16px); /* 3 */  
   -webkit-text-size-adjust: 100%; /* 2 */
   -ms-text-size-adjust: 100%; /* 2 */
+  color: $dark-gray;   
 
   // Default font-size (85.7%)
   font-size: 100% * ($base-font-size / 21px);
@@ -346,7 +347,7 @@ menu,
 ol,
 ul {
   margin: rhythm(1) 0;
-  padding: 0 0 0 $indent-amount; /* LTR */
+  padding: 0 0 0 24px; /* LTR */
 }
 
 ul, ol {

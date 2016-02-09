@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Sub Navigation"
+description: The sub navigation appears on every non-landing page. As the User moves deeper into the site's structure, the navigation conditionally displays the children of the current active item (indicated in orange). Using font weight, rules, and indents, the sidebar navigation can clearly show up to four levels deep.
+categories: Components
+---
+<section class="styleguide-example">
+	<div class="container">
+		<div class="l-3up-1">{% include rail-subnavigation-lvl-2.html %}</div>
+		<div class="l-3up-2">{% include rail-subnavigation-lvl-3.html %}</div>
+		<div class="l-3up-3">{% include rail-subnavigation-lvl-4.html %}</div>		
+	</div>
+</section>
+
+<section class="styleguide-markup container">
+  <div class="l-1up">
+{% highlight html %}
+{% include rail-subnavigation-lvl-2.html %}
+{% endhighlight %}
+  </div>
+</section>

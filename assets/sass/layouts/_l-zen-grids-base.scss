@@ -60,3 +60,62 @@ $zen-auto-include-flow-item-base: false;
 }
 
 } // End of @if $zen-reverse-all-floats == true
+
+
+/* =============================================================================
+   General Page layout
+   ========================================================================== */
+
+.l-main-content {
+	@include zen-clear();
+	@include slug(1, 1);
+	@include zen-grid-item(12, 1);
+	@include breakpoint($md-lg) {
+		@include zen-grid-item(8, 1);
+	}
+}
+.l-rail {
+	@include zen-clear();
+	@include slug(0, 1);
+	@include zen-grid-item(12, 1);
+	@include breakpoint($md-lg) {
+		@include zen-clear(none);	
+		@include slug(1, 1);
+		@include zen-grid-item(4, 9);
+	}
+}
+
+
+/* =============================================================================
+   Blog Page layout
+   ========================================================================== */
+
+.l-blog-main-content {
+	@include zen-clear();
+	@include slug(1, 1);
+	@include zen-grid-item(12, 1);
+	@include breakpoint($md-lg) {
+		@include zen-grid-item(8, 1, right);
+	}
+}
+.l-blog-rail {
+	@include zen-clear();
+	@include slug(0, 1);
+	@include zen-grid-item(12, 1);
+	@include breakpoint($md-lg) {
+		@include zen-clear(none);	
+		@include slug(1, 1);
+		@include zen-grid-item(4, 1);
+	}
+}
+
+
+/* =============================================================================
+   Landing Page layout
+   ========================================================================== */
+
+// for wide sections of content
+.l-main-content-wide {
+	@include zen-clear();
+	@include slug(1, 1);
+}

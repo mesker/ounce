@@ -2,11 +2,6 @@
    Typography
    ============================================================== */
 
-body {
-  font-family: 'Whitney SSm A', 'Whitney SSm B', $helvetica;
-  color: $dark-gray; 
-}
-
 // Use to spec Whitney 'display'
 @mixin display-type { 
   font-family: 'Whitney A', 'Whitney B', $helvetica;
@@ -72,12 +67,11 @@ p, ul, ol {
 }
 
 li {
-  @include groom(2, $body-text);
-  //margin-left: $slug/2;     
+  @include groom(2, $body-text);     
   // for nested lists
   ul li {
-    margin-top: rhythm(1, $body-text) ;
-    margin-bottom: rhythm(1, $body-text) ;
+    margin-top: rhythm(1, $body-text);
+    margin-bottom: rhythm(1, $body-text);
   } 
 }
 

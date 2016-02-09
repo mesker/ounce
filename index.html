@@ -4,7 +4,7 @@ title: Home
 ---
 <div class="container">
   <div class="l-1up styleguide-body">
-    <h1>Styleguide</h1>
+    <h1>Style Guide</h1>
 
     <section>
       <hr />
@@ -22,7 +22,7 @@ title: Home
       <h2>Components</h2>
       <p>Elements are combined and modified to create components. Components are designed to serve specific functional roles within the system.</p>
       <ul class="posts">
-        {% for post in site.categories.components %}
+        {% for post in site.categories.components reversed %}
           <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
@@ -33,7 +33,7 @@ title: Home
       <h2>Templates</h2>
       <p>Based on the needs of the content, Components are arranged into specific layouts to create Templates.<p>
       <ul class="posts">
-        {% for post in site.categories.templates %}
+        {% for post in site.categories.templates reversed %}
           <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>

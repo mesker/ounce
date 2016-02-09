@@ -1,0 +1,41 @@
+---
+layout: template
+title: "General (with Initiatives content)"
+categories: Templates
+---
+<!-- Header & Nav partial -->  
+{% include site-header.html %}
+
+<div class="container">
+  <!-- Page Content -->
+  <div class="l-main-content">
+    <article>
+      <h1>Initiatives</h1>
+      
+      <p class="deck">For more than two decades, the Ounce of Prevention Fund has been a leader in developing, innovating, and advancing high-quality, birth-to-five programs.</p>
+      <p>We serve 4,000 children and families through Early Head Start and Head Start programs we fund and operate in Chicago, as well as through our network of home-visiting and doula programs throughout Illinois. Our innovative programs incorporate the latest research with proven service models to narrow the academic achievement gap faced by many vulnerable children.</p>
+      
+      {% include inline-illustrated-list.html %}
+
+      <footer>
+        <div class="share-this">
+          <img src="{{ site.baseurl }}/assets/img/global/share-this.png">
+        </div>
+      </footer>
+
+    </article>
+  </div>
+
+  <!-- Rail Content -->
+  <div class="l-rail">
+    <!-- Sub Nav -->
+    {% include rail-subnavigation-lvl-2.html %}
+
+    <!-- Promo -->
+    <aside class="rail-promo">
+    </aside>
+  </div>  
+</div>
+
+<!-- Footer partial -->  
+{% include site-footer.html %}

@@ -94,7 +94,7 @@ $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
 // Now create some variables for the font stacks we want to use on this site.
-$base-font-family: $helvetica; // The font family set on the html element.
+$base-font-family: 'Whitney SSm A', 'Whitney SSm B', $helvetica; // The font family set on the html element.
 $font-monospace:   $courier;
 
 
